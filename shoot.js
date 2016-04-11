@@ -83,14 +83,27 @@ function capture(url, short, callback)  {
 
 	page.viewportSize = { width: w1, height: h1 };
 	page.open(url, function(status) {
+
+		console.log(short + " l");
+		console.log(status);
+
 		page.render( "shots/" + short + '_l_' + d +'.png');
-	
+
 		page.viewportSize = { width: w2, height: h2 };
 		page.open(url, function(status) {
+
+			console.log(short + " m");
+			console.log(status);
+
 			page.render( "shots/" + short + '_m_' + d +'.png');
 
 			page.viewportSize = { width: w3, height: h3 };
 			page.open(url, function(status) {
+
+				console.log(short + " s");
+				console.log(status);
+
+
 				page.render( "shots/" + short + '_s_' + d + '.png');
 
 				  callback();
